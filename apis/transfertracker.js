@@ -299,6 +299,8 @@ router.post(
         tokenID: tokenID
       });
 
+      console.log('erc721token', erc721token);
+
       if (erc721token) {
         if (to == erc721token.owner) {
           return res.json({});

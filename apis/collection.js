@@ -256,6 +256,7 @@ router.post('/getMintableCollections', auth, async (req, res) => {
       isAppropriate: true
     });
     let collections = [...internalCollections, ...myCollections];
+
     let tokenTypeMap = new Map();
     let promise = collections.map(async (collection) => {
       let category = await Category.findOne({

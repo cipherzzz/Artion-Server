@@ -848,6 +848,8 @@ router.post('/fetchTokens', async (req, res) => {
       : { isAppropriate: false })
   }));
 
+  console.log(searchResults)
+
   return res.json({
     status: 'success',
     data: {
@@ -908,6 +910,7 @@ router.post('/getSingleItemDetails', async (req, res) => {
       tokenID: tokenID,
       isAppropriate: true
     });
+    console.log("nft", nft)
     if (!nft)
       return res.json({
         status: 'failed'

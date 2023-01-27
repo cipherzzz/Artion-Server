@@ -10,7 +10,7 @@ const extractAddress = require("../services/address.utils");
 const validateSignature = require("../apis/middleware/auth.sign");
 const Logger = require('../services/logger');
 
-const ADMINADDRESS = process.env.ADMINADDRESS;
+const ADMINADDRESS = '0x851c04b2c8CC4b3af6c886EA7cc4D326ffAEFe5A'//process.env.ADMINADDRESS;
 
 const isAdmin = (msgSender) => {
   return toLowerCase(ADMINADDRESS) == toLowerCase(msgSender);

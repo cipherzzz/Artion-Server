@@ -203,6 +203,7 @@ router.get("/getaccountinfo", auth, async (req, res) => {
 
 router.post("/getuseraccountinfo", async (req, res) => {
   let address = req.body.address;
+  console.log('address', address)
   if (!ethers.utils.isAddress(address))
     return res.json({
       status: "failed",
@@ -212,6 +213,7 @@ router.post("/getuseraccountinfo", async (req, res) => {
   let account = await Account.findOne({ address: address });
   let followers = await Follow.find({ to: address });
   let followings = await Follow.find({ from: address });
+
   if (account) {
     return res.json({
       status: "success",

@@ -5,6 +5,7 @@ const AdminAddresses = require("../../config/adminAddress");
 const admin_auth = (req, res, next) => {
   try {
     let address = extractAddress(req, res);
+    console.log("address", address)
     if (AdminAddresses.includes(address)) {
       next();
     } else
